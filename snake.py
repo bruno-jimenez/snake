@@ -19,10 +19,10 @@ x=720
 y=480
 window = pygame.display.set_mode((x, y))
 pygame.display.set_caption("Snake")
-font = pygame.font.Font(None, 35)
+font = pygame.font.Font(None, 45)
 
 # color setup
-green = pygame.Color(0, 255, 0)
+green = pygame.Color(26, 138, 8)
 black = pygame.Color(0, 0, 0)
 red = pygame.Color(255, 0, 0)
 white = pygame.Color(255, 255, 255)
@@ -63,7 +63,7 @@ def game_over():        # End the game when condition is trigger
     pygame.display.flip()
 
     # Wait 2 sec before quiting the program
-    time.sleep(2)
+    time.sleep(1)
     game_menu()
 
 
@@ -183,7 +183,7 @@ def main_loop():    # Main game loop
 #[---------------------------------]
 
         score_text = font.render(f'Score: {score}', True, (255, 255, 255))
-        window.blit(score_text, (50, 50))
+        window.blit(score_text, (40, 400))
 
 #[---------------------------------]
 #      set the game refresh
@@ -224,7 +224,7 @@ def game_menu():
         game_menu_frame = game_menu_text.render('PRESS SPACE TO START THE GAME', True, white)
         game_menu_set = game_menu_frame.get_rect()
         game_menu_set.midtop = (x / 2, y / 4)
-        score_frame = game_menu_text.render(f'Last score : {last_score}', True, white)
+        score_frame = game_menu_text.render(f'Previous score : {last_score}', True, white)
         score_set = score_frame.get_rect()
         score_set.midbottom = (x / 2, y / 4)
 
